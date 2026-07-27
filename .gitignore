@@ -1,0 +1,32 @@
+# Private input data
+Response_Matrix_Table.csv
+*.csv
+*.mat
+
+# Generated experiment directories
+Step*_Results/
+Step*Results/
+*_Results/
+results/
+outputs/
+
+# MATLAB generated files
+*.asv
+*.m~
+*.fig
+*.mex*
+slprj/
+codegen/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+temp/
+tmp/
+
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

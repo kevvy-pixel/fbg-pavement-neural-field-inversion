@@ -1,0 +1,13 @@
+%% Run the selected main model (Step19)
+% Run this file from the repository root after placing the authorized
+% Response_Matrix_Table.csv in the same directory.
+
+assert(isfile('Response_Matrix_Table.csv'), [ ...
+    'Missing private input file: Response_Matrix_Table.csv', newline, ...
+    'Place the authorized dataset in the repository root and run again.']);
+
+assert(exist('dlnetwork', 'class') == 8, [ ...
+    'MATLAB Deep Learning Toolbox is required.', newline, ...
+    'Run "ver" to inspect installed toolboxes.']);
+
+run('Step19_BoundaryAware_FiLM_AD_DNF.m');
