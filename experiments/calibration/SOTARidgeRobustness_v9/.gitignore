@@ -1,0 +1,6 @@
+outputs/
+demo_data/
+*.asv
+*.m~
+*.mat
+*.fig

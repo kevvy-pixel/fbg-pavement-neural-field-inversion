@@ -1,6 +1,6 @@
-# Private input data
+# Private input data (never commit, including copies inside experiment packages)
 Response_Matrix_Table.csv
-*.csv
+**/Response_Matrix_Table.csv
 *.mat
 
 # Generated experiment directories
@@ -9,6 +9,7 @@ Step*Results/
 *_Results/
 results/
 outputs/
+demo_data/
 
 # MATLAB generated files
 *.asv
@@ -24,6 +25,21 @@ codegen/
 *.bak
 temp/
 tmp/
+__pycache__/
+
+# LaTeX build products and locally bundled fonts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+docs/model-evolution-report/fonts/*.otf
 
 # Operating systems and editors
 .DS_Store

@@ -1,0 +1,2 @@
+n_cases,n_gate_applied,n_gate_rejected,n_applied_cases_improved,n_applied_cases_degraded,mean_gated_RMSE_gain_microstrain,median_gated_RMSE_gain_microstrain,mean_gain_when_applied_microstrain
+22,4,18,2,2,-0.706103452140313,0,-3.88356898677172
