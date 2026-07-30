@@ -1,0 +1,4 @@
+model,n,coverage_percent,mean_condition_distance,max_sensor_distance_norm,mean_anchor_gate,correction_rms_ue
+NearestAnchor-Persistence,616,100,0.0862689393939393,0,0,0
+AnchoredResidual-FiLM,616,100,0.0862689393939393,0,0.298660755157471,50.6421294474992
+AnchoredResidual-XOnly-FiLM,616,100,0.0862689393939393,0,0.170663288661412,46.3832711264245

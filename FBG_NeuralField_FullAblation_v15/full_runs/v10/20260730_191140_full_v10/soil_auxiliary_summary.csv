@@ -1,0 +1,2 @@
+model,split,n,r2,rmse_ue,mae_ue,bias_ue
+Multilayer-Transfer-FiLM,test,484,-0.0528134830647966,258.083355420171,146.868329787576,36.623006686001

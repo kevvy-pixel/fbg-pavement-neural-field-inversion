@@ -1,0 +1,4 @@
+FBG_NeuralField_AnchoredResidual_v13
+Implemented: 2026-07-30
+MATLAB target: R2024a+
+Required toolbox: Deep Learning Toolbox

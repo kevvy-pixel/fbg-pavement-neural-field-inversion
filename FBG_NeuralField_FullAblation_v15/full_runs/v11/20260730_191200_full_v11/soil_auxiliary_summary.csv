@@ -1,0 +1,2 @@
+model,split,n,r2,rmse_ue,mae_ue,bias_ue
+SharedMultilayer-FiLM,test,484,-0.151252526598392,269.879300321441,136.295999006649,32.0176623623802

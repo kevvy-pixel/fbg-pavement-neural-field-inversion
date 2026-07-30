@@ -1,0 +1,4 @@
+FBG_NeuralField_MultilayerBoundary_v10
+Regenerated: 2026-07-29
+MATLAB target: R2024a+
+Required toolbox: Deep Learning Toolbox

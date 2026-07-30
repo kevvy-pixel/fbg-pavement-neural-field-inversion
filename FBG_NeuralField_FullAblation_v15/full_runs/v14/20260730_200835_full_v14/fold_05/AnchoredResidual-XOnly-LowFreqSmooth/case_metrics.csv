@@ -1,0 +1,5 @@
+case_id,model,layer,split,n,r2,rmse_ue,mae_ue,bias_ue
+25kg双点不对称加载,AnchoredResidual-XOnly-LowFreqSmooth,asphalt,test,28,0.822137166796503,57.9994807677556,29.4628729393812,12.5669111884237
+40kg单点偏心加载,AnchoredResidual-XOnly-LowFreqSmooth,asphalt,test,28,0.699474859692389,97.5852959800993,48.7030248776321,18.3295308805989
+40kg纵中心线95cm加载,AnchoredResidual-XOnly-LowFreqSmooth,asphalt,test,28,0.895496088757617,82.6551602586638,52.9510261052713,-5.52302965518004
+60kg单点中心加载,AnchoredResidual-XOnly-LowFreqSmooth,asphalt,test,28,0.971627197434253,45.7239600428966,24.4920680916798,-5.9152434804087

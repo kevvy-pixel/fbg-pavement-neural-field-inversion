@@ -162,6 +162,27 @@ See [`docs/MODEL_EVOLUTION.md`](docs/MODEL_EVOLUTION.md) for the method history
 and interpretation boundaries. The full Chinese report is available at
 [`docs/model-evolution-report/FBG_FiLM_Model_Evolution_Report_CN.pdf`](docs/model-evolution-report/FBG_FiLM_Model_Evolution_Report_CN.pdf).
 
+## Full v10-v15 ablation
+
+The subsequent v10-v15 experiments test multilayer transfer, shared soil
+supervision, soil-condition summaries, leakage-free historical anchoring,
+X-only residual correction, reduced Fourier frequencies, and load-position
+smoothing. The final v15 package contains a complete 12-model, five-fold
+benchmark with 60 fold-model evaluations and no reduced training runs.
+
+- Detailed Chinese change log:
+  [`EXPERIMENT_EVOLUTION_v10_v15.md`](EXPERIMENT_EVOLUTION_v10_v15.md)
+- Full report and raw run archive:
+  [`FBG_NeuralField_FullAblation_v15/`](FBG_NeuralField_FullAblation_v15/)
+- Cross-validation best-model archive:
+  [`FBG_NeuralField_FullAblation_v15/best_model_v14_lowfreqsmooth/`](FBG_NeuralField_FullAblation_v15/best_model_v14_lowfreqsmooth/)
+
+The best five-fold point estimate is
+`AnchoredResidual-XOnly-LowFreqSmooth` with asphalt RMSE
+\(61.04\,\mu\varepsilon\) and \(R^2=0.9097\). The simpler no-smoothing
+low-frequency model is within \(0.25\,\mu\varepsilon\) RMSE, so both are
+retained pending repeated-seed validation.
+
 ## Data and licensing
 
 The source code and experimental dataset are separate works. The dataset is
