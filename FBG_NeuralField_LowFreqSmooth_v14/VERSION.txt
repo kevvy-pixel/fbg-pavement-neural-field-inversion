@@ -1,0 +1,4 @@
+FBG_NeuralField_LowFreqSmooth_v14
+Implemented: 2026-07-30
+MATLAB target: R2024a+
+Required toolbox: Deep Learning Toolbox

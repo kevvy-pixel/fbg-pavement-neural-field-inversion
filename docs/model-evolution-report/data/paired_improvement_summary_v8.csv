@@ -1,0 +1,3 @@
+baseline,candidate,n_paired_cases,mean_RMSE_reduction_microstrain,median_RMSE_reduction_microstrain,n_cases_RMSE_improved,mean_R2_improvement
+Step19-SOTA-FiLM,Step19-SOTA+Ridge-4,22,3.14691905034447,1.81631112849989,13,0.0626820050599208
+Step19-SOTA-FiLM,Step19-SOTA+Gated-Ridge-4,22,-0.706103452140313,0,2,0.0322353702276928

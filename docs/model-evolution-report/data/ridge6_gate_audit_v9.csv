@@ -1,0 +1,2 @@
+n_case_repeat_pairs,n_gate_applied,n_gate_rejected,n_applied_pairs_improved,n_applied_pairs_degraded,gate_application_rate_percent,applied_pair_win_rate_percent,mean_gain_when_applied_microstrain
+440,96,344,76,20,21.8181818181818,79.1666666666667,12.9483474892898

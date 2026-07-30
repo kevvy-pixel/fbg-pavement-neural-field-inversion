@@ -1,0 +1,4 @@
+model,n,coverage_percent,mean_condition_distance,max_sensor_distance_norm,mean_anchor_gate,correction_rms_ue
+Step19-SOTA-FiLM,616,100,0.0862689393939393,0,0,0
+AnchoredResidual-XOnly-LowFreq,616,100,0.0862689393939393,0,0.170663288661412,36.7855293764933
+AnchoredResidual-XOnly-LowFreqSmooth,616,100,0.0862689393939393,0,0.170663288661412,35.4382792239047

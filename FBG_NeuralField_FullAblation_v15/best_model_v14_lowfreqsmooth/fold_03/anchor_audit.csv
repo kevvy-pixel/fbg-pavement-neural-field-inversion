@@ -1,0 +1,5 @@
+case_id,anchor_case_id,n,coverage_percent,condition_distance,max_sensor_distance_norm
+10kg双点对称加载,25kg双点对称加载,28,100,0.065625,0
+35kg双点对称加载,40kg双点对称加载,28,100,0.021875,0
+40kg纵中心线42.5cm加载,40kg纵中心线30cm加载,28,100,0.104166666666667,0
+5kg双点不对称加载,10kg双点不对称加载,28,100,0.021875,0

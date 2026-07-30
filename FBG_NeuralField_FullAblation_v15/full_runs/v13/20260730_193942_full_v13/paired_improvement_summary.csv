@@ -1,0 +1,4 @@
+model,delta_r2,rmse_improvement_ue,rmse_improvement_percent,mae_improvement_ue
+NearestAnchor-Persistence,NaN,NaN,NaN,NaN
+AnchoredResidual-FiLM,NaN,NaN,NaN,NaN
+AnchoredResidual-XOnly-FiLM,NaN,NaN,NaN,NaN

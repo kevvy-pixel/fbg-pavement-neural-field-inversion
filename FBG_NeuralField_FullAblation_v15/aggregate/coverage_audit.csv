@@ -1,0 +1,13 @@
+model_key,asphalt_rows,unique_row_ids,duplicate_row_id_groups,fold_count
+v10/Step19-SOTA-FiLM,616,616,0,5
+v10/BoundaryRelative-FiLM,616,616,0,5
+v10/Multilayer-Transfer-FiLM,616,616,0,5
+v11/SharedMultilayer-FiLM,616,616,0,5
+v12/SoilMeanAux-X-FiLM,616,616,0,5
+v12/SoilMeanAux-XY-FiLM,616,616,0,5
+v13/NearestAnchor-Persistence,616,616,0,5
+v13/AnchoredResidual-FiLM,616,616,0,5
+v13/AnchoredResidual-XOnly-FiLM,616,616,0,5
+v14/Step19-SOTA-FiLM,616,616,0,5
+v14/AnchoredResidual-XOnly-LowFreq,616,616,0,5
+v14/AnchoredResidual-XOnly-LowFreqSmooth,616,616,0,5
