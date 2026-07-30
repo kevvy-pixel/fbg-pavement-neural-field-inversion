@@ -1,0 +1,6 @@
+metric_scope,R2,RMSE_microstrain,MAE_microstrain,Bias_microstrain,primary_generalization_metric
+train,0.9535,39.3999,25.2782,-2.15518,false
+validation,0.9659,43.0053,26.196,-1.54762,false
+test,0.7810,123.084,73.3265,-26.5445,true
+all,0.9164,58.7115,31.9554,-5.39815,false
+all_excluding_extreme_boundary,0.9586,40.6302,25.9084,-2.23546,false

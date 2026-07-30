@@ -9,16 +9,24 @@ supervision, FiLM conditioning, and boundary-aware features.
 This repository extends the data-processing and response-modeling workflow in
 [`fbg-multilayer-pavement-modeling`](https://github.com/kevvy-pixel/fbg-multilayer-pavement-modeling).
 
-## Recommended model
+## Final model decision / 最终模型决策
 
-The recommended entry point is:
+The retained zero-shot backbone is Step19. Sparse calibration is an optional
+new-condition adaptation layer rather than a replacement neural network:
 
 ```matlab
 run('run_main.m')
 ```
 
-This runs `Step19_BoundaryAware_FiLM_AD_DNF.m`, the selected main model.
-Step19 uses a case-wise split to test cross-condition generalization and adds:
+| Available information | Recommended output | Status |
+|---|---|---|
+| No measurements from the new condition | Step19-SOTA | Main zero-shot model |
+| 4 sparse measurements | SOTA + Ridge-4 | Low-sensor ablation |
+| 6 sparse measurements, accuracy first | SOTA + Ridge-6 | Recommended |
+| 6 sparse measurements, risk first | SOTA + Gated Ridge-6 | Recommended conservative mode |
+
+`run_main.m` runs `Step19_BoundaryAware_FiLM_AD_DNF.m`. Step19 uses a
+case-wise split to test cross-condition generalization and adds:
 
 - a displacement neural field;
 - strain supervision through second-order automatic differentiation;
@@ -29,6 +37,11 @@ Step19 uses a case-wise split to test cross-condition generalization and adds:
 The learned displacement is a **displacement proxy**, not a directly measured
 absolute displacement. Absolute displacement calibration requires independent
 LVDT, DIC, or displacement-sensor measurements.
+
+Residual-FiLM, the spatial boundary expert, Ridge-4, and the four-point LOOCV
+gate are retained as ablations. The complete version mapping and conclusions
+are documented in
+[`docs/EXPERIMENT_INDEX_CN.md`](docs/EXPERIMENT_INDEX_CN.md).
 
 ## Code map
 
@@ -47,10 +60,31 @@ The iteration report also discusses Step20A and Step20B diagnostics. Their
 standalone source files are not part of the supplied code snapshot, so this
 repository does not claim to reproduce those two runs.
 
+## Repository layout
+
+```text
+.
+├─ Step13_...m ... Step21_...m       # original model evolution
+├─ run_main.m                         # selected Step19 entry point
+├─ experiments/
+│  ├─ ablations/                      # Residual/MoE and v4-v8 evidence
+│  └─ calibration/                    # retained Ridge-6 robustness workflow
+└─ docs/
+   ├─ DATA_SCHEMA.md
+   ├─ MODEL_EVOLUTION.md
+   ├─ EXPERIMENT_INDEX_CN.md
+   └─ model-evolution-report/         # report PDF, LaTeX, figures, and summary data
+```
+
+The experiment packages remain self-contained because their helper functions
+and configurations changed between versions. Run them from their own
+directories; do not mix helper files from different versions.
+
 ## Requirements
 
 - MATLAB with script-local-function support;
 - Deep Learning Toolbox;
+- Statistics and Machine Learning Toolbox for the calibration packages;
 - sufficient memory for second-order automatic differentiation.
 
 The experiments use random seed `2026`. The supplied scripts run on CPU unless
@@ -92,9 +126,21 @@ For an ablation, run the corresponding `Step*.m` file directly. Every script
 creates its own result directory containing figures, tables, models, and logs.
 These generated artifacts are ignored by Git.
 
+For the later standalone packages, switch MATLAB to the package directory and
+follow its `README_CN.md`. The retained robustness analysis is:
+
+```matlab
+cd('experiments/calibration/SOTARidgeRobustness_v9')
+RUN_NEXT_EXPERIMENT("D:\path\to\completed_v7_full_sota_comparison")
+```
+
+The v9 workflow reads saved v7 SOTA predictions and performs closed-form
+Ridge-4/6 calibration; it does not retrain the neural network.
+
 ## Reported model selection
 
-The supplied iteration report identifies Step19 as the most stable main model:
+The supplied iteration report identifies Step19 as the most stable shared
+neural-field backbone:
 
 - all-data \(R^2 = 0.9164\);
 - non-extreme-boundary \(R^2 = 0.9586\);
@@ -105,13 +151,24 @@ Step21 only slightly improved that condition while reducing overall
 generalization, so it is retained as a negative ablation rather than the main
 model.
 
+In the later same-specification comparison, Step19-SOTA achieved
+\(R^2=0.8467\) and RMSE \(79.51\,\mu\varepsilon\), while Residual-FiLM fell to
+\(R^2=0.7106\) and RMSE \(109.26\,\mu\varepsilon\). In 20 repeated nested
+spatial splits, Ridge-6 reduced overall RMSE from \(86.63\) to
+\(80.44\,\mu\varepsilon\) and improved the 95 cm condition by
+\(15.78\,\mu\varepsilon\) on average with an 85% win rate.
+
 See [`docs/MODEL_EVOLUTION.md`](docs/MODEL_EVOLUTION.md) for the method history
-and interpretation boundaries.
+and interpretation boundaries. The full Chinese report is available at
+[`docs/model-evolution-report/FBG_FiLM_Model_Evolution_Report_CN.pdf`](docs/model-evolution-report/FBG_FiLM_Model_Evolution_Report_CN.pdf).
 
 ## Data and licensing
 
 The source code and experimental dataset are separate works. The dataset is
 maintained privately and is not distributed through this repository.
+`Response_Matrix_Table.csv` is ignored at every directory depth, including any
+local copy inside an experiment package. Report summary CSV files contain only
+derived metrics and are safe to publish.
 
 No open-source license has been selected for this code snapshot. Public
 visibility alone does not grant permission to reuse or redistribute the code.

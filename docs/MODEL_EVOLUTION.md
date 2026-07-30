@@ -60,6 +60,41 @@ The accompanying report also lists Step20A and Step20B. Their standalone source
 files were not present in the supplied code snapshot, so they are not included
 as reproducible repository entries.
 
+## Later experiment packages
+
+The standalone packages under `experiments/` test whether the 95 cm limitation
+should be addressed by a more complex shared neural network or by low-dimensional
+adaptation from a few measurements:
+
+| Version | Package | Question | Decision |
+|---|---|---|---|
+| Initial | `ablations/ResidualMoE_initial` | Do residual blocks or a spatial edge expert help? | Keep as structural ablations |
+| v4 | `ablations/FixedFewshot_v4` | How do calibration methods compare on one fixed sensor split? | Fixed-split diagnostic |
+| v5 | `ablations/FinalCalibration_v5` | Can the calibration workflow be made reproducible? | Superseded workflow version |
+| v6 | `ablations/GlobalBenchmark_v6` | Are the structural ideas promising under a fast global benchmark? | Screening evidence only |
+| v7 | `ablations/SOTAFullComparison_v7` | Does Residual-FiLM beat Step19 at the same full training budget? | No; strict negative ablation |
+| v8 | `ablations/SOTACalibrationGate_v8` | Do Ridge-4 and a four-point LOOCV gate help? | Ridge-4 ablation; reject the gate |
+| v9 | `calibration/SOTARidgeRobustness_v9` | Are Ridge-4/6 gains robust to sensor selection? | Retain Ridge-6 and six-point gate |
+
+The fair v7 comparison reverses the apparent ranking from the early fast
+screening: Step19-SOTA reaches `R2=0.8467, RMSE=79.51 microstrain`, whereas
+Residual-FiLM reaches `R2=0.7106, RMSE=109.26 microstrain`. The structural
+modification is therefore not selected.
+
+The v9 analysis uses 20 repeated nested spatial splits. Ridge-6 reduces mean
+overall RMSE from `86.63` to `80.44 microstrain` (7.15%) and improves the
+95 cm condition by `15.78 microstrain` on average with an 85% win rate. The
+six-point gate gives up some mean gain in exchange for lower run-to-run
+variation and an explicit fallback to SOTA.
+
+## Selected deployment policy
+
+- **No new-condition measurements:** Step19-SOTA.
+- **Six measurements, accuracy priority:** Step19-SOTA + Ridge-6.
+- **Six measurements, risk priority:** Step19-SOTA + Gated Ridge-6.
+- **Four measurements:** Ridge-4 only as a low-sensor option/ablation; do not
+  use the four-point LOOCV gate.
+
 ## Interpretation limits
 
 - The predicted displacement is a proxy field constrained by strain
@@ -71,3 +106,7 @@ as reproducible repository entries.
 - A small number of measured extreme-boundary points or stronger experimentally
   justified boundary information is preferable to adding unsupported hard
   boundary conditions.
+- The 20 repeated spatial splits measure sensitivity to calibration-point
+  selection; they are not 20 independent physical loading experiments.
+- Ridge calibration corrects only a global affine scale and offset. It cannot
+  repair local peak-location or response-shape errors.

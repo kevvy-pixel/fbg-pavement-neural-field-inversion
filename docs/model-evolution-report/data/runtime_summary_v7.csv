@@ -1,0 +1,4 @@
+method,mean_training_seconds,std_training_seconds,mean_time_to_best_seconds,mean_test_inference_seconds,mean_inference_ms_per_row,parameter_count,mean_calibration_seconds
+Step19-SOTA-FiLM,156.12956952,7.52659410042835,121.14338516,0.03262186,0.266966285714286,158529,0
+Step19-Residual-FiLM,148.05758694,5.42704837420217,129.4447618,0.03323822,0.270968714285714,158529,0
+Step19-Residual+Ridge-4,148.05758694,5.42704837420217,129.4447618,0.03323822,0.270968714285714,158531,5.55e-06

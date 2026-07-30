@@ -1,0 +1,40 @@
+Step19 边界感知 FiLM 条件调制 AD-DNF 报告
+============================================================
+
+一、方法说明
+本脚本采用边界感知 FiLM 条件调制位移神经场。空间特征在 dlfeval 内部由 tracked xN/yN 动态构造，避免预计算空间特征切断自动微分链条。
+网络输出位移代理场 w，再通过自动微分得到纵向/横向应变，与 FBG 实测应变对齐。
+
+二、关键设置
+数据划分方式：case
+训练层：Asphalt
+FiLM层数：5，空间隐藏维度：96，条件隐藏维度：64
+镜像增强：1, X=1, Y=0
+边界距离特征：1，边界加权：1，边界特征长度：0.180
+极边界阈值 normalized distance：0.210
+最优 Epoch：1071
+最优验证 data loss：0.0553106
+
+三、总体性能
+train: R2 = 0.9535, RMSE = 39.3999 ue, MAE = 25.2782 ue, Bias = -2.15518 ue
+validation: R2 = 0.9659, RMSE = 43.0053 ue, MAE = 26.196 ue, Bias = -1.54762 ue
+test: R2 = 0.7810, RMSE = 123.084 ue, MAE = 73.3265 ue, Bias = -26.5445 ue
+all: R2 = 0.9164, RMSE = 58.7115 ue, MAE = 31.9554 ue, Bias = -5.39815 ue
+
+四、排除极边界工况后的补充指标
+all_excluding_extreme_boundary: R2 = 0.9586, RMSE = 40.6302 ue, MAE = 25.9084 ue, Bias = -2.23546 ue
+
+五、分工况薄弱项
+  40kg纵中心线95cm加载 | 纵中心线加载 | 40 kg | edgeMin=0.208 | boundary=1 | extreme=1 | R2=0.3703 | RMSE=202.898 ue
+  5kg单点中心加载 | 单点中心加载 | 5 kg | edgeMin=0.500 | boundary=0 | extreme=0 | R2=0.5661 | RMSE=14.2847 ue
+  10kg单点中心加载 | 单点中心加载 | 10 kg | edgeMin=0.500 | boundary=0 | extreme=0 | R2=0.7678 | RMSE=14.5736 ue
+  40kg纵中心线30cm加载 | 纵中心线加载 | 40 kg | edgeMin=0.250 | boundary=1 | extreme=0 | R2=0.8701 | RMSE=52.4079 ue
+  20kg单点中心加载 | 单点中心加载 | 20 kg | edgeMin=0.500 | boundary=0 | extreme=0 | R2=0.9016 | RMSE=23.2312 ue
+  5kg双点对称加载 | 双点对称加载 | 5 kg | edgeMin=0.300 | boundary=0 | extreme=0 | R2=0.9150 | RMSE=44.4323 ue
+  10kg双点对称加载 | 双点对称加载 | 10 kg | edgeMin=0.300 | boundary=0 | extreme=0 | R2=0.9205 | RMSE=44.2922 ue
+  40kg单点偏心加载 | 单点偏心加载 | 40 kg | edgeMin=0.300 | boundary=0 | extreme=0 | R2=0.9279 | RMSE=47.8111 ue
+
+六、建议
+若 case 模式改善有限，建议把 cfg.splitMode 改为 point 做消融，区分场内插值能力与跨工况外推能力。
+若边界工况仍然偏差较大，优先检查 Case_Metrics.csv 中 load_edge_min_norm 较小的工况，并与 Fig_BoundaryDistance_vs_CaseR2.png 对照。
+模型文件：Step19_BoundaryAware_FiLM_AD_DNF_Results\Models\Step19_BoundaryAware_FiLM_AD_DNF_Model.mat
