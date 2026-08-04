@@ -2,6 +2,7 @@
 Response_Matrix_Table.csv
 *.csv
 *.mat
+!best_model/fixed_case_folds.csv
 
 # Generated experiment directories
 Step*_Results/
@@ -9,6 +10,14 @@ Step*Results/
 *_Results/
 results/
 outputs/
+
+# 保留论文中使用的修正数据消融汇总（其余运行结果仍忽略）
+!results/
+results/*
+!results/corrected_v2_ablation/
+!results/corrected_v2_ablation/model_summary.csv
+!results/corrected_v2_ablation/before_after.csv
+!results/corrected_v2_ablation/paired_bootstrap.csv
 
 # MATLAB generated files
 *.asv
@@ -30,3 +39,7 @@ tmp/
 Thumbs.db
 .vscode/
 .idea/
+
+# Python缓存
+__pycache__/
+*.py[cod]

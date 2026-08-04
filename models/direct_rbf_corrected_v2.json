@@ -1,0 +1,10 @@
+{
+  "model": "Direct RBF多输出场模型",
+  "task": "新工况零沥青目标观测",
+  "training_cases": 22,
+  "outputs": 28,
+  "gamma": 0.1,
+  "alpha": 0.01,
+  "inner_rmse_ue": 29.34419033062803,
+  "target": "delta_lambda_final_nm / 0.0012"
+}
