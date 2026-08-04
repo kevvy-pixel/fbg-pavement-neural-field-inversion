@@ -1,73 +1,60 @@
-# Model evolution and experiment roles
+# 模型演化与实验角色
 
-## Research objective
+## 研究目标
 
-The code reconstructs a continuous pavement response field from discrete FBG
-measurements. The main physics-inspired formulation predicts a displacement
-proxy field
+利用稀疏FBG观测和加载工况重建路面连续响应场，并进一步扩展为加载全过程的时空相对应变与相对挠度模型。
+
+## 历史MATLAB神经场
+
+1. **Step13：直接响应基线。** 坐标MLP直接拟合应变或波长响应。
+2. **Step14：位移代理神经场。** 网络输出位移代理，并通过二阶自动微分得到方向应变。
+3. **Step15：沥青层与荷载均衡。** 移除土层训练标签，并降低高载荷工况主导效应。
+4. **Step16：弱边界锚定。** 用软约束处理位移零空间。
+5. **Step17：FiLM条件神经场。** 加载条件调制空间网络。
+6. **Step18：点级诊断。** 检验已见工况内部空间插值，不代表新工况零观测泛化。
+7. **Step19：边界感知FiLM神经场。** 曾作为旧数据主模型。
+8. **Step21：边界残差专家。** 95 cm略有改善但整体退化，作为负消融。
+
+历史Step19结果：全数据R²为0.9164，排除极端边界后R²为0.9586、RMSE为40.63 με。但这些结果来自旧层位、坐标和响应矩阵，不能作为修正数据上的正式成绩。
+
+## v19–v34路线
+
+- v19验证Single和Top3Soil锚定专家；
+- v20–v25研究三专家级联、回退和保守门控；
+- v26–v32研究Winkler、Pasternak、混合场、二维能量和全局物理门控；
+- v33研究新工况提供少量目标测点的Gappy-POD，任务条件不同；
+- v34恢复测试工况零目标观测，使用元数据到低维场的POD–RBF。
+
+## CorrectedData_v2后的变化
+
+修正数据后，所有主要模型重新在冻结工况五折上比较：
+
+- v19 Single：39.882 με；
+- v19 Top3Soil：40.998 με；
+- v23联级：40.262 με；
+- v27 Dynamic Winkler PINN：40.608 με；
+- POD–RBF：35.286 με；
+- Direct RBF：32.152 με。
+
+专家排序由 `Top3Soil > Single` 反转为 `Single > Top3Soil`，说明旧土层优势部分来自错误数据映射。复杂门控和强物理残差没有超过低参数场回归。
+
+## 当前主模型
+
+当前主模型为Direct RBF多输出场模型：
 
 \[
-w_\theta = w_\theta(x,y,c)
+\mathbf{x}_{condition}\rightarrow
+\mathbf{K}_{RBF}\rightarrow
+[\hat\varepsilon_1,\ldots,\hat\varepsilon_{28}]
 \]
 
-and obtains directional strain supervision through automatic differentiation:
+它不是深度神经网络，但在只有22个独立工况时具有更合适的统计容量。神经场仍作为连续坐标扩展和后续时空模型的结构基础。
 
-\[
-\hat{\varepsilon}_x=-z\frac{\partial^2w_\theta}{\partial x^2},
-\qquad
-\hat{\varepsilon}_y=-z\frac{\partial^2w_\theta}{\partial y^2}.
-\]
+## 物理解释边界
 
-Longitudinal FBGs use \(\hat{\varepsilon}_x\), while transverse FBGs use
-\(\hat{\varepsilon}_y\).
-
-## Experiment sequence
-
-1. **Step13 - direct-response baseline.** A coordinate MLP directly fits the
-   measured strain or wavelength response. It establishes whether the processed
-   data support neural reconstruction.
-2. **Step14 - displacement neural field.** The output changes from direct
-   strain to a displacement proxy whose second derivatives supervise strain.
-   Asphalt and soil are both included, making this an exploratory physical
-   model.
-3. **Step15 - asphalt-only and load-balanced.** Soil is removed from training,
-   and load weighting reduces domination by large-load cases.
-4. **Step16 - weak edge anchoring.** Weak boundary collocation fixes gauge
-   freedom without asserting a strict simply supported or clamped boundary.
-5. **Step17 - FiLM-conditioned AD-DNF.** Loading conditions modulate the spatial
-   network through FiLM. Spatial features are constructed inside the tracked
-   automatic-differentiation graph.
-6. **Step18 - point-mode diagnostic.** A point-wise split tests interpolation
-   within observed loading conditions rather than zero-shot condition
-   generalization.
-7. **Step19 - boundary-aware main model.** Boundary-distance features and
-   moderate boundary weighting improve ordinary and non-extreme-boundary
-   reconstruction while retaining a strict case split.
-8. **Step21 - boundary residual expert.** A gated residual branch is tested as
-   a negative ablation. Its small improvement on the extreme boundary does not
-   offset its lower overall generalization.
-
-## Reported comparison
-
-| Model | Split | Test R2 | All R2 | 95 cm R2 | Interpretation |
-|---|---:|---:|---:|---:|---|
-| Step13 | case | 0.8886 | 0.9457 | not reported | Stable direct-fit baseline |
-| Step19 | case | 0.7810 | 0.9164 | 0.3703 | Selected main model |
-| Step19 excluding extreme boundary | case | - | 0.9586 | excluded | Stable ordinary-condition result |
-| Step21 | case | 0.7591 | 0.8932 | 0.3973 | Negative ablation |
-
-The accompanying report also lists Step20A and Step20B. Their standalone source
-files were not present in the supplied code snapshot, so they are not included
-as reproducible repository entries.
-
-## Interpretation limits
-
-- The predicted displacement is a proxy field constrained by strain
-  derivatives, not an independently measured absolute displacement.
-- Case-wise and point-wise splits answer different questions and should not be
-  compared as if they measured the same generalization task.
-- The 95 cm extreme-boundary condition is outside the reliable zero-shot
-  operating region of the current main model.
-- A small number of measured extreme-boundary points or stronger experimentally
-  justified boundary information is preferable to adding unsupported hard
-  boundary conditions.
+- 应变约束得到的是位移代理，不是绝对位移；
+- 工况级分折与点级分折回答不同问题，不能混合比较；
+- 95 cm属于困难边界工况；
+- 当前数据不足以辨识Mindlin独立转角与横向剪切；
+- 没有卸载数据时不能建模卸载后残余沉降；
+- 没有真实塌陷样本时只能构建异常评分，不能报告塌陷概率。

@@ -1,0 +1,10 @@
+model,old_rmse_ue,protocol_note,corrected_rmse_ue,absolute_improvement_ue,relative_improvement_percent
+v19-DirectNeuralField,184.377,same frozen v19 folds,66.7279470965935,117.64905290340651,63.8089636469877
+v19-SingleAnchor,74.93,same frozen v19 folds,39.881856569525176,35.04814343047483,46.774514120478884
+v19-Top3Soil,66.277,same frozen v19 folds,40.99841513715123,25.278584862848774,38.140810330655846
+v23-ReversibleCascade,51.45,old score used development folds; interpret cautiously,40.26227839448893,11.187721605511072,21.744842770672637
+v27-DynamicWinklerPINN,63.483,same frozen v19/v27 folds,40.60800168915123,22.874998310848767,36.03326608832092
+v34-DirectRBF-Metadata,53.854,same frozen folds; metadata only,32.15232011788545,21.701679882114547,40.297247896376405
+v34-PODRBF-Metadata,51.228,same frozen folds; metadata only,35.28561086908617,15.942389130913831,31.120459769879425
+v34-DirectRBF-MetadataSoil,61.43,same frozen folds; metadata plus soil,33.0868711638553,28.3431288361447,46.13890417734771
+v34-PODRBF-MetadataSoil,50.349,same frozen folds; metadata plus soil,46.13714372063176,4.211856279368234,8.365322606940028
