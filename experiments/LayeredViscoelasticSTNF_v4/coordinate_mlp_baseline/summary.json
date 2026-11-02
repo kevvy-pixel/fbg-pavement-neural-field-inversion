@@ -1,0 +1,17 @@
+{
+  "model": "coordinate MLP baseline",
+  "hidden_layers": [
+    64,
+    64
+  ],
+  "training_time_stride_s": 5,
+  "development_cases": 17,
+  "fixed_test_opened": false,
+  "metrics": {
+    "early": 48.859686740066,
+    "late": 36.1621754575569,
+    "late_asphalt": 47.28701990647761,
+    "late_soil": 9.786314358868346,
+    "overall": 40.768039159436285
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "scope": "development-only four-fold OOF",
+  "fixed_test_opened": false,
+  "development_cases": 17,
+  "fixed_test_cases": 5,
+  "phases_s": [
+    5.0,
+    15.0,
+    30.0,
+    60.0,
+    90.0,
+    120.0,
+    150.0,
+    210.0
+  ],
+  "best_by_late_rmse": {
+    "model_family": "prony2_early",
+    "folds": 4,
+    "overall_rmse_ue": 64.57989550792355,
+    "asphalt_rmse_ue": 36.064499944972404,
+    "soil_rmse_ue": 85.40819229948931,
+    "early_rmse_ue": 42.70342572482957,
+    "late_rmse_ue": 64.57989550792355
+  }
+}

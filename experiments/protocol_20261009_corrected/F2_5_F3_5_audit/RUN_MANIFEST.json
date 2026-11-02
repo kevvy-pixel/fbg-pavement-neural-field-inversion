@@ -1,0 +1,16 @@
+{
+  "stages": [
+    "F2.5",
+    "F3.5"
+  ],
+  "held_types": [
+    "DualAsymmetric",
+    "DualSymmetric"
+  ],
+  "models": [
+    "B0",
+    "B3"
+  ],
+  "sal2_retained_in_main_metrics": true,
+  "swap_test": "checkpoint inference only; no retraining"
+}

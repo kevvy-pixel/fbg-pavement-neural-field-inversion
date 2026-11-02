@@ -1,0 +1,34 @@
+{
+  "dataset_root": "C:\\Users\\27356\\Documents\\Codex\\2026-10-09\\c-users-27356-documents-codex-2026\\outputs\\guochuang_fbg_pavement_dataset",
+  "training_table": "reorganized_dataset/film_dynamic_training_table.csv",
+  "geometry_authority": "training_table_case_bound_p1_p2",
+  "longitudinal_semantics": "SinglePointAxisScan",
+  "coordinate_unit": "cm",
+  "fixed_test_opened": false,
+  "integrity": {
+    "training_rows": 309100,
+    "unique_cases": 22,
+    "unique_structural_sensors": 50,
+    "time_min": 0,
+    "time_max": 280,
+    "time_points_per_case_sensor": 281,
+    "missing_response": 0,
+    "temperature_rows": 0,
+    "development_cases": 17,
+    "fixed_test_cases": 5
+  },
+  "sensor_audit": {
+    "reorganized_sensor_rows": 51,
+    "reorganized_structural_sensors": 50,
+    "spatial_point_rows": 50,
+    "layer_counts": {
+      "Asphalt": 28,
+      "Soil": 22,
+      "Temperature": 1
+    }
+  },
+  "geometry_counts": {
+    "match": 13,
+    "mismatch": 9
+  }
+}

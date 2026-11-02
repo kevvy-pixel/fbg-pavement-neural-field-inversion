@@ -1,0 +1,7 @@
+﻿outer_fold,candidate,family,inner_rmse_ue,gamma,alpha
+1,direct_full,direct,42.00753958315277,0.3,0.1
+1,linear_early,structured_early,66.8562995742052,0.3,0.1
+1,prony1_full_tau40,structured_full,41.629483819606946,0.3,0.1
+1,prony2_full_tau20-120,structured_full,41.72900876631683,0.3,0.1
+1,prony1_early_tau40,structured_early,51.49242856053768,0.3,0.1
+1,prony2_early_tau20-120,structured_early,73.3751453240358,0.3,0.1

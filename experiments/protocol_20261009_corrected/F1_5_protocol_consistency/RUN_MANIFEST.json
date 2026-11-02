@@ -1,0 +1,9 @@
+{
+  "dataset_hashes_identical": true,
+  "fold_case_assignments_identical": true,
+  "merge_rows": 238850,
+  "merge_all_both": true,
+  "truth_max_abs_diff": 0.0,
+  "prediction_mean_abs_diff": 2.6164325666962855,
+  "prediction_max_abs_diff": 25.28915356223669
+}

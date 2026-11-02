@@ -1,0 +1,58 @@
+{
+  "fixed_test_opened": false,
+  "development_cases": 17,
+  "candidates": [
+    {
+      "candidate": "layer_graph_soil_0.3",
+      "overall_rmse_ue": 53.127376566926216,
+      "early_rmse_ue": 44.064709441188796,
+      "late_rmse_ue": 65.5022952177756,
+      "asphalt_late_rmse_ue": 87.37946773175426,
+      "soil_late_rmse_ue": 5.810395345101114,
+      "weighted_overall_rmse_ue": 24.76471755813447,
+      "weighted_late_rmse_ue": 31.082560390162726
+    },
+    {
+      "candidate": "uniform_graph_0.1",
+      "overall_rmse_ue": 53.01537149290489,
+      "early_rmse_ue": 43.70340991184203,
+      "late_rmse_ue": 65.66352799597162,
+      "asphalt_late_rmse_ue": 87.60915945516919,
+      "soil_late_rmse_ue": 5.538011094953198,
+      "weighted_overall_rmse_ue": 24.492609228603424,
+      "weighted_late_rmse_ue": 30.779833264127358
+    },
+    {
+      "candidate": "none",
+      "overall_rmse_ue": 53.51899882286669,
+      "early_rmse_ue": 44.16233435887865,
+      "late_rmse_ue": 66.2387273425677,
+      "asphalt_late_rmse_ue": 88.3841958364334,
+      "soil_late_rmse_ue": 5.431389977239732,
+      "weighted_overall_rmse_ue": 24.545523576019246,
+      "weighted_late_rmse_ue": 30.843907082743048
+    },
+    {
+      "candidate": "layered_prony2",
+      "overall_rmse_ue": 53.51899882286669,
+      "early_rmse_ue": 44.16233435887865,
+      "late_rmse_ue": 66.2387273425677,
+      "asphalt_late_rmse_ue": 88.3841958364334,
+      "soil_late_rmse_ue": 5.431389977239732,
+      "weighted_overall_rmse_ue": 24.545523576019246,
+      "weighted_late_rmse_ue": 30.843907082743048
+    },
+    {
+      "candidate": "quality_graph_0.3",
+      "overall_rmse_ue": 56.899553018157064,
+      "early_rmse_ue": 49.57164368826203,
+      "late_rmse_ue": 67.3640205142886,
+      "asphalt_late_rmse_ue": 89.86426381042435,
+      "soil_late_rmse_ue": 5.951155377386929,
+      "weighted_overall_rmse_ue": 25.20055436773178,
+      "weighted_late_rmse_ue": 31.62633613508672
+    }
+  ],
+  "temporal_basis": "Prony2 tau=40,160 s",
+  "mapping": "authoritative reorganized sensor mapping"
+}

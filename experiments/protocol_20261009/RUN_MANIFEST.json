@@ -1,0 +1,22 @@
+{
+  "protocol": "2026-10-09",
+  "input_version": "G1",
+  "stages": {
+    "C1": {
+      "completed": true,
+      "epochs": 5,
+      "prediction_files": 35
+    },
+    "D1": {
+      "completed": true,
+      "epochs": 3,
+      "prediction_files": 49
+    }
+  },
+  "fixed_test_opened": false,
+  "models": [
+    "A0-3",
+    "B0",
+    "B3"
+  ]
+}

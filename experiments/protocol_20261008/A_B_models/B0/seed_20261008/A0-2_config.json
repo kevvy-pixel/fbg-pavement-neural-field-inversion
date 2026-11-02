@@ -1,0 +1,11 @@
+{
+  "model": "A0-2",
+  "taus_s": [
+    40.0,
+    160.0
+  ],
+  "linear_drift": false,
+  "graph_penalty": 0.0,
+  "ridge": 0.001,
+  "fixed_test_opened": false
+}

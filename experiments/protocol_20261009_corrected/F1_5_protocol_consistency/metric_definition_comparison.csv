@@ -1,0 +1,7 @@
+﻿item,stage_a,f1,consistent
+evaluation rows,"0..280 s, 1 s, all OOF rows","0..280 s, 1 s, all OOF rows",True
+merge key,case_id+sensor_id+relative_time_s,case_id+sensor_id+relative_time_s,True
+early,relative_time_s <= 90,relative_time_s <= 90,True
+late,relative_time_s > 90,relative_time_s > 90,True
+reported headline,mean of 4 fold RMSE (macro),one RMSE over concatenated OOF rows (pooled),False
+A0 training cases,outer train minus one inner validation fold,all outer-train cases,False

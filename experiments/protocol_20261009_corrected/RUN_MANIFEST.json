@@ -1,0 +1,56 @@
+{
+  "protocol": "2026-10-09",
+  "dataset": "guochuang_fbg_pavement_dataset/reorganized_dataset",
+  "loss": "ordinary MSE",
+  "fixed_test_opened": false,
+  "stages": {
+    "F0": {
+      "status": "completed",
+      "sal2_sat2_curves": 10
+    },
+    "F1": {
+      "status": "completed",
+      "max_epochs": 150,
+      "min_epochs": 50,
+      "patience": 20,
+      "seeds": [
+        20261008,
+        20261009,
+        20261010
+      ]
+    },
+    "F2": {
+      "status": "completed",
+      "prediction_files": 35
+    },
+    "F3": {
+      "status": "completed",
+      "prediction_files": 49
+    },
+    "F4": {
+      "status": "not_started",
+      "reason": "F2/F3 reports retained before double extrapolation"
+    },
+    "F5": {
+      "status": "not_started"
+    },
+    "F6": {
+      "status": "not_started"
+    },
+    "F7": {
+      "status": "closed_until_freeze"
+    },
+    "F1.5": {
+      "status": "completed",
+      "report": "F1_5_protocol_consistency/F1_5_REPORT.md"
+    },
+    "F2.5": {
+      "status": "completed",
+      "report": "F2_5_F3_5_audit/f25_f35_report.md"
+    },
+    "F3.5": {
+      "status": "completed",
+      "report": "F2_5_F3_5_audit/f25_f35_report.md"
+    }
+  }
+}

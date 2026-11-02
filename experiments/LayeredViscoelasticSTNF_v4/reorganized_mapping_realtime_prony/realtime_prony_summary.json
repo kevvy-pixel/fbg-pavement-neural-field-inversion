@@ -1,0 +1,87 @@
+{
+  "cases": 17,
+  "relative_time_s": [
+    0,
+    280
+  ],
+  "time_resolution_s": 1,
+  "fixed_test_opened": false,
+  "temporal_basis": "Prony2 tau=40,160 plus linear drift basis",
+  "metrics": [
+    {
+      "candidate": "none",
+      "phase": "overall",
+      "rmse_ue": 60.99931387482252
+    },
+    {
+      "candidate": "none",
+      "phase": "early",
+      "rmse_ue": 44.84524002467735
+    },
+    {
+      "candidate": "none",
+      "phase": "late",
+      "rmse_ue": 67.37826383375457
+    },
+    {
+      "candidate": "none",
+      "phase": "late_asphalt",
+      "rmse_ue": 89.93546853204646
+    },
+    {
+      "candidate": "none",
+      "phase": "late_soil",
+      "rmse_ue": 4.846009887937736
+    },
+    {
+      "candidate": "uniform_graph_0.1",
+      "phase": "overall",
+      "rmse_ue": 60.06763293494459
+    },
+    {
+      "candidate": "uniform_graph_0.1",
+      "phase": "early",
+      "rmse_ue": 44.38691048456189
+    },
+    {
+      "candidate": "uniform_graph_0.1",
+      "phase": "late",
+      "rmse_ue": 66.27668741862104
+    },
+    {
+      "candidate": "uniform_graph_0.1",
+      "phase": "late_asphalt",
+      "rmse_ue": 88.4554401732302
+    },
+    {
+      "candidate": "uniform_graph_0.1",
+      "phase": "late_soil",
+      "rmse_ue": 4.98975160869557
+    },
+    {
+      "candidate": "soil_graph_0.3",
+      "phase": "overall",
+      "rmse_ue": 59.63807208239345
+    },
+    {
+      "candidate": "soil_graph_0.3",
+      "phase": "early",
+      "rmse_ue": 44.63450331419926
+    },
+    {
+      "candidate": "soil_graph_0.3",
+      "phase": "late",
+      "rmse_ue": 65.62007317579845
+    },
+    {
+      "candidate": "soil_graph_0.3",
+      "phase": "late_asphalt",
+      "rmse_ue": 87.56098334641246
+    },
+    {
+      "candidate": "soil_graph_0.3",
+      "phase": "late_soil",
+      "rmse_ue": 5.333332794438278
+    }
+  ]
+}

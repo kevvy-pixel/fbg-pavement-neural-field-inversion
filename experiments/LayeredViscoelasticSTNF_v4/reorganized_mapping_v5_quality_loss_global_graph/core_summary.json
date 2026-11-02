@@ -1,0 +1,68 @@
+{
+  "fixed_test_opened": false,
+  "development_cases": 17,
+  "candidates": [
+    {
+      "candidate": "layer_graph_soil_0.3",
+      "overall_rmse_ue": 53.12737656692622,
+      "early_rmse_ue": 44.0647094411888,
+      "late_rmse_ue": 65.5022952177756,
+      "asphalt_late_rmse_ue": 87.37946773175426,
+      "soil_late_rmse_ue": 5.810395345101115,
+      "weighted_overall_rmse_ue": 24.76471755813447,
+      "weighted_late_rmse_ue": 31.08256039016272,
+      "asphalt_weighted_late_rmse_ue": 49.09203180481697,
+      "soil_weighted_late_rmse_ue": 5.626710505832655
+    },
+    {
+      "candidate": "uniform_graph_0.1",
+      "overall_rmse_ue": 53.015371492904826,
+      "early_rmse_ue": 43.703409911841966,
+      "late_rmse_ue": 65.66352799597153,
+      "asphalt_late_rmse_ue": 87.60915945516908,
+      "soil_late_rmse_ue": 5.538011094953197,
+      "weighted_overall_rmse_ue": 24.492609228603417,
+      "weighted_late_rmse_ue": 30.77983326412735,
+      "asphalt_weighted_late_rmse_ue": 48.6465502430076,
+      "soil_weighted_late_rmse_ue": 5.384342638186059
+    },
+    {
+      "candidate": "none",
+      "overall_rmse_ue": 53.518998822866614,
+      "early_rmse_ue": 44.16233435887861,
+      "late_rmse_ue": 66.23872734256759,
+      "asphalt_late_rmse_ue": 88.38419583643326,
+      "soil_late_rmse_ue": 5.431389977239731,
+      "weighted_overall_rmse_ue": 24.54552357601925,
+      "weighted_late_rmse_ue": 30.84390708274306,
+      "asphalt_weighted_late_rmse_ue": 48.765389076229845,
+      "soil_weighted_late_rmse_ue": 5.291787409542778
+    },
+    {
+      "candidate": "layered_prony2",
+      "overall_rmse_ue": 53.51899882286669,
+      "early_rmse_ue": 44.16233435887865,
+      "late_rmse_ue": 66.2387273425677,
+      "asphalt_late_rmse_ue": 88.3841958364334,
+      "soil_late_rmse_ue": 5.431389977239732,
+      "weighted_overall_rmse_ue": 24.545523576019246,
+      "weighted_late_rmse_ue": 30.843907082743048,
+      "asphalt_weighted_late_rmse_ue": 48.76538907622983,
+      "soil_weighted_late_rmse_ue": 5.291787409542779
+    },
+    {
+      "candidate": "quality_graph_0.3",
+      "overall_rmse_ue": 56.899553018157064,
+      "early_rmse_ue": 49.57164368826203,
+      "late_rmse_ue": 67.3640205142886,
+      "asphalt_late_rmse_ue": 89.86426381042435,
+      "soil_late_rmse_ue": 5.951155377386928,
+      "weighted_overall_rmse_ue": 25.20055436773178,
+      "weighted_late_rmse_ue": 31.626336135086724,
+      "asphalt_weighted_late_rmse_ue": 49.94718434459301,
+      "soil_weighted_late_rmse_ue": 5.745950129050768
+    }
+  ],
+  "temporal_basis": "Prony2 tau=40,160 s",
+  "mapping": "authoritative reorganized sensor mapping"
+}

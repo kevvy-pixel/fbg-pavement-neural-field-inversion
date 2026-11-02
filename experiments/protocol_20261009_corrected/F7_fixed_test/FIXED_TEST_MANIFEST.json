@@ -1,0 +1,26 @@
+{
+  "stage": "F7_fixed_test",
+  "training_role": "development",
+  "evaluation_role": "fixed-test",
+  "models": [
+    "A0-3",
+    "B0",
+    "G2"
+  ],
+  "seeds": [
+    20261008,
+    20261009,
+    20261010
+  ],
+  "epochs": 150,
+  "fixed_cases": [
+    "35kg双点对称加载",
+    "40kg纵中心线42.5cm加载",
+    "40kg纵中心线95cm加载",
+    "5kg双点不对称加载",
+    "80kg单点中心加载"
+  ],
+  "fixed_test_opened_once": true,
+  "no_model_selection_after_fixed_test": true,
+  "data_sha256": "c73eaa91bf7f7a7c9f43336c35457011555bf2169afa9cfa749c2c5fe5a09f92"
+}

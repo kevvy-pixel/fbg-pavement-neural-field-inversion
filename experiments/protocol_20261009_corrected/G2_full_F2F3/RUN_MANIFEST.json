@@ -1,0 +1,16 @@
+{
+  "model": "G2",
+  "stages": [
+    "F2",
+    "F3"
+  ],
+  "seeds": [
+    20261008,
+    20261009,
+    20261010
+  ],
+  "epochs": 150,
+  "min_epochs": 50,
+  "patience": 20,
+  "fixed_test_opened": false
+}

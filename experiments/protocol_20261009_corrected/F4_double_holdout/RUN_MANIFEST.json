@@ -1,0 +1,49 @@
+{
+  "stage": "F4",
+  "combinations": [
+    [
+      "DualAsymmetric",
+      "SAL2"
+    ],
+    [
+      "DualAsymmetric",
+      "SAT2"
+    ],
+    [
+      "DualAsymmetric",
+      "SSL1"
+    ],
+    [
+      "DualSymmetric",
+      "SAL2"
+    ],
+    [
+      "DualSymmetric",
+      "SAT2"
+    ],
+    [
+      "SingleEccentric",
+      "SAL2"
+    ],
+    [
+      "LongitudinalLine",
+      "SAL2"
+    ],
+    [
+      "SingleCenter",
+      "SAL2"
+    ]
+  ],
+  "models": [
+    "A0-3",
+    "B0",
+    "G2"
+  ],
+  "seeds": [
+    20261008,
+    20261009,
+    20261010
+  ],
+  "epochs": 150,
+  "fixed_test_opened": false
+}

@@ -1,0 +1,29 @@
+{
+  "model": "layered FiLM dynamic microstrain field",
+  "epochs": 80,
+  "fit_time_stride_s": 5,
+  "development_cases": 17,
+  "fixed_test_opened": false,
+  "metrics": {
+    "early": {
+      "rmse_ue": 45.499005508422854,
+      "weighted_rmse_ue": 20.502003288269044
+    },
+    "late": {
+      "rmse_ue": 26.984021186828613,
+      "weighted_rmse_ue": 10.295528030395507
+    },
+    "late_asphalt": {
+      "rmse_ue": 36.0403491973877,
+      "weighted_rmse_ue": 16.36623592376709
+    },
+    "late_soil": {
+      "rmse_ue": 1.1209805011749268,
+      "weighted_rmse_ue": 1.0930186748504638
+    },
+    "overall": {
+      "rmse_ue": 34.30082626342774,
+      "weighted_rmse_ue": 14.434332275390625
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "mapping_rows": 14,
+  "response_rows": 308,
+  "cases": 22,
+  "load_types": [
+    "DualAsymmetric",
+    "DualSymmetric",
+    "LongitudinalLine",
+    "SingleCenter",
+    "SingleEccentric"
+  ],
+  "quality_columns": [
+    "sensor_id",
+    "channel",
+    "sensor_index",
+    "n_files",
+    "median_std_nm",
+    "max_std_nm",
+    "median_abs_slope_nm_s",
+    "max_range_nm",
+    "max_missing_rate",
+    "matched_omit_observed_peak",
+    "noise_ratio",
+    "weight_noise",
+    "weight_drift",
+    "weight_tracking",
+    "quality_weight",
+    "quality_rule"
+  ],
+  "quality_matching_rows": 8,
+  "sal2_sensor_count": 8,
+  "sat2_sensor_count": 6
+}

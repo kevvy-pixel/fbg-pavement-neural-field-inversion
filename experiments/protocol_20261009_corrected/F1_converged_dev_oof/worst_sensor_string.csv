@@ -1,0 +1,4 @@
+﻿model,sensor_string,layer,rmse_ue
+A0-3,SAL2,Asphalt,59.23497219079635
+B0,SAL2,Asphalt,59.7179013815697
+B3,SAL2,Asphalt,59.89208285423146

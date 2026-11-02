@@ -1,0 +1,25 @@
+{
+  "scope": "development-only smoke",
+  "fixed_test_opened": false,
+  "development_cases": 17,
+  "fixed_test_cases": 5,
+  "phases_s": [
+    5.0,
+    15.0,
+    30.0,
+    60.0,
+    90.0,
+    120.0,
+    150.0,
+    210.0
+  ],
+  "best_by_late_rmse": {
+    "model": "prony1_early_tau40",
+    "folds": 1,
+    "overall_rmse_ue": 88.66597524600748,
+    "asphalt_rmse_ue": 40.87357177128077,
+    "soil_rmse_ue": 125.46361116324877,
+    "early_rmse_ue": 56.3547689137893,
+    "late_rmse_ue": 88.66597524600748
+  }
+}

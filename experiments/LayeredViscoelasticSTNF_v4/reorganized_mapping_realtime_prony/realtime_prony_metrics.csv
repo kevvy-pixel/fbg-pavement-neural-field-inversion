@@ -1,0 +1,16 @@
+﻿candidate,phase,rmse_ue
+none,overall,60.99931387482252
+none,early,44.84524002467735
+none,late,67.37826383375457
+none,late_asphalt,89.93546853204646
+none,late_soil,4.846009887937736
+uniform_graph_0.1,overall,60.06763293494459
+uniform_graph_0.1,early,44.38691048456189
+uniform_graph_0.1,late,66.27668741862104
+uniform_graph_0.1,late_asphalt,88.4554401732302
+uniform_graph_0.1,late_soil,4.98975160869557
+soil_graph_0.3,overall,59.63807208239345
+soil_graph_0.3,early,44.63450331419926
+soil_graph_0.3,late,65.62007317579845
+soil_graph_0.3,late_asphalt,87.56098334641246
+soil_graph_0.3,late_soil,5.333332794438278

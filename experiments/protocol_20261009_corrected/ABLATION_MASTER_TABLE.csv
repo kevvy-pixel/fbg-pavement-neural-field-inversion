@@ -1,0 +1,38 @@
+table,model,metric,value,std,notes
+development_oof,A0-3,overall_rmse,32.699,,deterministic
+development_oof,B0,overall_rmse,32.559,0.012,seed_mean_std
+development_oof,B3,overall_rmse,32.946,0.025,seed_mean_std
+development_oof,G2,overall_rmse,30.238,0.190,seed_mean_std
+development_oof,G3,overall_rmse,30.178,0.322,seed_mean_std
+development_oof,G2+G3,overall_rmse,30.222,0.132,seed_mean_std
+development_oof,A0-3,late_asphalt_rmse,36.097,,deterministic
+development_oof,B0,late_asphalt_rmse,35.893,0.008,seed_mean_std
+development_oof,B3,late_asphalt_rmse,36.218,0.044,seed_mean_std
+development_oof,G2,late_asphalt_rmse,32.388,,reported_summary
+development_oof,G3,late_asphalt_rmse,32.337,,reported_summary
+development_oof,G2+G3,late_asphalt_rmse,32.356,,reported_summary
+development_oof,A0-3,late_soil_rmse,5.724,,deterministic
+development_oof,B0,late_soil_rmse,2.933,0.137,seed_mean_std
+development_oof,B3,late_soil_rmse,1.011,0.022,seed_mean_std
+development_oof,G2,late_soil_rmse,0.963,,reported_summary
+development_oof,G3,late_soil_rmse,2.090,,reported_summary
+development_oof,G2+G3,late_soil_rmse,2.185,,reported_summary
+external_holdout,A0-3,C1_task_macro_rmse,31.435,14.322,5 load types
+external_holdout,B0,C1_task_macro_rmse,30.309,15.360,5 load types
+external_holdout,B3,C1_task_macro_rmse,30.924,15.683,5 load types
+external_holdout,G2,C1_task_macro_rmse,30.614,,5 load types
+external_holdout,A0-3,D1_string_macro_rmse,24.744,22.307,7 sensor strings
+external_holdout,B0,D1_string_macro_rmse,22.173,24.682,7 sensor strings
+external_holdout,B3,D1_string_macro_rmse,20.785,26.038,7 sensor strings
+external_holdout,G2,D1_string_macro_rmse,20.868,,7 sensor strings
+double_holdout,B0,F4_task_macro_rmse,47.381,,8 combinations
+double_holdout,G2,F4_task_macro_rmse,46.964,,8 combinations
+fixed_test,A0-3,overall_rmse,34.360,,formal final fixed test
+fixed_test,B0,overall_rmse,34.033,0.018,formal final fixed test
+fixed_test,G2,overall_rmse,34.317,0.150,formal final fixed test
+fixed_test,A0-3,late_asphalt_rmse,29.467,,formal final fixed test
+fixed_test,B0,late_asphalt_rmse,28.858,,formal final fixed test
+fixed_test,G2,late_asphalt_rmse,29.352,,formal final fixed test
+fixed_test,A0-3,late_soil_rmse,6.544,,formal final fixed test
+fixed_test,B0,late_soil_rmse,4.045,,formal final fixed test
+fixed_test,G2,late_soil_rmse,1.634,,formal final fixed test

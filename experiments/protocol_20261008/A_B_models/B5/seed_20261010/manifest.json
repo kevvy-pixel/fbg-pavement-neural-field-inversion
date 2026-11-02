@@ -1,0 +1,36 @@
+{
+  "protocol_version": "2026-10-08-v1",
+  "data_version": "reorganized_mapping_v1",
+  "raw_time_range_s": [0, 598],
+  "experiment_time_range_s": [0, 280],
+  "training_stride_s": 5,
+  "evaluation_stride_s": 1,
+  "early_range_s": [0, 90],
+  "late_range_s": [91, 280],
+  "development_cases": 17,
+  "fixed_test_cases": 5,
+  "fixed_test_opened": false,
+  "random_seed_primary": 20261008,
+  "code_version": "run_phase_ab.py + evaluate_oof.py @ protocol_20261008-v1",
+  "primary_metric": "pooled ordinary RMSE",
+  "diagnostic_metrics": ["raw quality-weighted RMSE", "clipped quality-weighted RMSE", "ordinary RMSE excluding D2-CH1"],
+  "quality_metric_note": "Quality-weighted metrics are diagnostic until D2-CH1 peak identity is audited.",
+  "files": {
+    "dynamic_dataset_1s.npz": {
+      "path": "C:/Users/27356/Documents/Codex/2026-08-01/kevvy-pixel-fbg-pavement-neural-field/outputs/reorganized_mapping_rebuild/dynamic_dataset_1s.npz",
+      "sha256": "5943C0FF0A2470B12AD56BFE512146E06FB7AC9B6E47B08668DF0E561C65BC4B"
+    },
+    "Reorganized_Sensor_Mapping.csv": {
+      "path": "C:/Users/27356/Documents/Codex/2026-10-07/c-users-27356-documents-codex-2026/outputs/reorganized_dataset_excel_mapping/Reorganized_Sensor_Mapping.csv",
+      "sha256": "E01C1D035E8346C4B993E2A0515942807F26B2DCF404D1CF630FD82980B8F5D4"
+    },
+    "fixed_case_split_reorganized_mapping.csv": {
+      "path": "C:/Users/27356/Documents/Codex/2026-10-07/c-users-27356-documents-codex-2026/outputs/reorganized_dataset_excel_mapping/fixed_case_split_reorganized_mapping.csv",
+      "sha256": "17C82388AFCA42C66DBC5037705FEAB849E6890665ECD2D30900A6036E74283D"
+    },
+    "sensor_quality_weights_from_no_load_peaks.csv": {
+      "path": "C:/Users/27356/Documents/Codex/2026-10-07/c-users-27356-documents-codex-2026/outputs/reorganized_dataset_excel_mapping/sensor_quality_weights_from_no_load_peaks.csv",
+      "sha256": "84414472875C750A80E0F10BACEE19CFF0E06CBC67D4E5DCA135FB1E14B8691E4"
+    }
+  }
+}

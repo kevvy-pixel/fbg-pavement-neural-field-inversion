@@ -1,0 +1,9 @@
+{
+  "model": "B3",
+  "seed": 20261008,
+  "epochs_max": 100,
+  "train_stride_s": 5,
+  "eval_stride_s": 1,
+  "fixed_test_opened": false,
+  "table": "C:\\Users\\27356\\Documents\\Codex\\2026-10-07\\c-users-27356-documents-codex-2026\\outputs\\reorganized_dataset_excel_mapping\\film_dynamic_training_table.csv"
+}

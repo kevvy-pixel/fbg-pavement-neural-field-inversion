@@ -1,0 +1,13 @@
+{
+  "protocol": "2026-10-09",
+  "version": "G1",
+  "stage": "A",
+  "epochs": 150,
+  "seeds": [
+    20261008,
+    20261009,
+    20261010
+  ],
+  "fixed_test_opened": false,
+  "root": "C:\\Users\\27356\\Documents\\Codex\\2026-10-09\\c-users-27356-documents-codex-2026\\outputs\\guochuang_fbg_pavement_dataset\\reorganized_dataset"
+}
